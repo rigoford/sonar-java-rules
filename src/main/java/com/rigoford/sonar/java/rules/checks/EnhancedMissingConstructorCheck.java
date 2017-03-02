@@ -18,9 +18,6 @@ public class EnhancedMissingConstructorCheck extends IssuableSubscriptionVisitor
 
     protected static final String DEFAULT_VALUE = "SpringBootApplication";
 
-    /**
-     * Name(s) of mitigating annotation(s). Values can be set in Quality profiles.
-     */
     @RuleProperty(
             defaultValue = DEFAULT_VALUE,
             description = "List of annotations which mitigate the Missing Constructor Check, without the prefix @, " +
