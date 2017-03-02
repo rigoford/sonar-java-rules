@@ -1,0 +1,27 @@
+<p>Checks that classes (except abstract ones) define a constructor and don't rely on the default one, unless the class has one or more 'mitigating' annotations.</p>
+<h2>Noncompliant Code Example</h2>
+<pre>
+class MyClass {
+    public static void main(String[] args) {
+        System.out.println("Hello World");
+    }
+}
+</pre>
+<h2>Compliant Solution</h2>
+<pre>
+class MyClass {
+    private MyClass() {}
+    public static void main(String[] args) {
+        System.out.println("Hello World");
+    }
+}
+</pre>
+or
+<pre>
+@SpringBootApplication
+class MyClass {
+    public static void main(String[] args) {
+        System.out.println("Hello World");
+    }
+}
+</pre>

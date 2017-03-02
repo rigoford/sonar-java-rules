@@ -1,0 +1,11 @@
+{
+  "title": "Missing Constructor (Enhanced)",
+  "status": "ready",
+  "remediation": {
+    "func": "Constant\/Issue",
+    "constantCost": "30min"
+  },
+  "tags": [
+  ],
+  "defaultSeverity": "Major"
+}
