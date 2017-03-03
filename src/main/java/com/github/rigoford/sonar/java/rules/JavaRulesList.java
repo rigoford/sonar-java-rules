@@ -1,8 +1,8 @@
-package com.rigoford.sonar.java.rules;
+package com.github.rigoford.sonar.java.rules;
 
 import java.util.List;
 
-import com.rigoford.sonar.java.rules.checks.EnhancedMissingConstructorCheck;
+import com.github.rigoford.sonar.java.rules.checks.EnhancedMissingConstructorCheck;
 import org.sonar.plugins.java.api.JavaCheck;
 
 import com.google.common.collect.ImmutableList;

@@ -1,4 +1,4 @@
-package com.rigoford.sonar.java.rules.checks;
+package com.github.rigoford.sonar.java.rules.checks;
 
 import com.google.common.collect.ImmutableList;
 import org.sonar.check.Priority;
