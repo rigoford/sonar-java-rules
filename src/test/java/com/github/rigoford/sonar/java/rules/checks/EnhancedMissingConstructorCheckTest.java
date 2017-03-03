@@ -1,4 +1,4 @@
-package com.rigoford.sonar.java.rules.checks;
+package com.github.rigoford.sonar.java.rules.checks;
 
 import org.junit.Test;
 import org.sonar.java.checks.verifier.JavaCheckVerifier;

@@ -1,4 +1,4 @@
-package com.rigoford.sonar.java.rules;
+package com.github.rigoford.sonar.java.rules;
 
 import org.sonar.api.Plugin;
 

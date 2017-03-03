@@ -89,7 +89,7 @@
 				<configuration>
 					<pluginKey>${project.artifactId}</pluginKey>
 					<pluginName>${project.name}</pluginName>
-					<pluginClass>com.rigoford.sonar.java.rules.JavaRulesPlugin</pluginClass>
+					<pluginClass>com.github.rigoford.sonar.java.rules.JavaRulesPlugin</pluginClass>
 					<sonarLintSupported>true</sonarLintSupported>
 					<sonarQubeMinVersion>5.6</sonarQubeMinVersion>
 				</configuration>
