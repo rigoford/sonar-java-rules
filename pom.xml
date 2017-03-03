@@ -127,6 +127,16 @@
 		<developerConnection>scm:git:ssh://github.com:rigoford/sonar-java-rules.git</developerConnection>
 		<url>http://github.com/rigoford/sonar-java-rules</url>
 	</scm>
+	<distributionManagement>
+		<repository>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+		</repository>
+		<snapshotRepository>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+		</snapshotRepository>
+	</distributionManagement>
 	<profiles>
 		<profile>
 			<id>release</id>
