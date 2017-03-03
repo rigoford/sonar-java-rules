@@ -5,7 +5,7 @@
 	<artifactId>sonar-java-rules</artifactId>
 	<version>0.1.0-SNAPSHOT</version>
 	<packaging>sonar-plugin</packaging>
-	<name>RigoFord Java Rules</name>
+	<name>${project.groupId}:${project.artifactId}</name>
 	<description>Customised Java Rules</description>
 	<properties>
 		<java.plugin.version>4.5.0.8398</java.plugin.version>
@@ -98,4 +98,23 @@
 			</plugin>
 		</plugins>
 	</build>
+	<url>https://github.com/rigoford/sonar-java-rules</url>
+	<licenses>
+		<license>
+			<name>MIT License</name>
+			<url>http://www.opensource.org/licenses/mit-license.php</url>
+		</license>
+	</licenses>
+	<developers>
+		<developer>
+			<name>Martin Ford</name>
+			<email>ford.j.martin@gmail.com</email>
+			<organizationUrl>https://github.com/rigoford</organizationUrl>
+		</developer>
+	</developers>
+	<scm>
+		<connection>scm:git:git://github.com/rigoford/sonar-java-rules.git</connection>
+		<developerConnection>scm:git:ssh://github.com:rigoford/sonar-java-rules.git</developerConnection>
+		<url>http://github.com/rigoford/sonar-java-rules</url>
+	</scm>
 </project>
