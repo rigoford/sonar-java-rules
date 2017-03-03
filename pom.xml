@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.github.rigoford</groupId>
 	<artifactId>sonar-java-rules</artifactId>
-	<version>0.1.0</version>
+	<version>0.2.0-SNAPSHOT</version>
 	<packaging>sonar-plugin</packaging>
 	<name>${project.groupId}:${project.artifactId}</name>
 	<description>Customised Java Rules</description>
