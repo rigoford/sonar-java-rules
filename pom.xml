@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.rigoford</groupId>
+	<groupId>com.github.rigoford</groupId>
 	<artifactId>sonar-java-rules</artifactId>
-	<version>0.1.0</version>
+	<version>0.1.0-SNAPSHOT</version>
 	<packaging>sonar-plugin</packaging>
 	<name>${project.groupId}:${project.artifactId}</name>
 	<description>Customised Java Rules</description>
@@ -78,7 +78,7 @@
 				<configuration>
 					<serverId>ossrh</serverId>
 					<nexusUrl>https://oss.sonatype.org/</nexusUrl>
-					<autoReleaseAfterClose>true</autoReleaseAfterClose>
+					<autoReleaseAfterClose>false</autoReleaseAfterClose>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -138,6 +138,7 @@
 		<connection>scm:git:git://github.com/rigoford/sonar-java-rules.git</connection>
 		<developerConnection>scm:git:ssh://github.com:rigoford/sonar-java-rules.git</developerConnection>
 		<url>http://github.com/rigoford/sonar-java-rules</url>
+		<tag>HEAD</tag>
 	</scm>
 	<distributionManagement>
 		<repository>
