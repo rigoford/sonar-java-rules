@@ -1,64 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-
-	<groupId>com.rigoford</groupId>
+	<groupId>com.github.rigoford</groupId>
 	<artifactId>sonar-java-rules</artifactId>
 	<version>0.1.0-SNAPSHOT</version>
 	<packaging>sonar-plugin</packaging>
-
-	<properties>
-		<sonar.plugin.api.version>6.2.1</sonar.plugin.api.version>
-		<java.plugin.version>4.5.0.8398</java.plugin.version>
-	</properties>
-
-	<name>RigoFord Java Rules</name>
+	<name>${project.groupId}:${project.artifactId}</name>
 	<description>Customised Java Rules</description>
-
+	<properties>
+		<assertj.version>3.6.2</assertj.version>
+		<junit.version>4.12</junit.version>
+		<logback.version>1.2.1</logback.version>
+		<maven-compiler-plugin.version>3.6.1</maven-compiler-plugin.version>
+		<maven-gpg-plugin.version>1.5</maven-gpg-plugin.version>
+		<maven-javadoc-plugin.version>2.9.1</maven-javadoc-plugin.version>
+		<maven-source-plugin.version>2.2.1</maven-source-plugin.version>
+		<nexus-staging-maven-plugin.version>1.6.7</nexus-staging-maven-plugin.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<sonar-java-plugin.version>4.6.0.8784</sonar-java-plugin.version>
+		<sonar-packaging-maven-plugin.version>1.18.0.372</sonar-packaging-maven-plugin.version>
+		<sonar-plugin-api.version>6.2.1</sonar-plugin-api.version>
+		<sortpom-maven-plugin.version>2.5.0</sortpom-maven-plugin.version>
+	</properties>
 	<dependencies>
-		<dependency>
-			<groupId>org.sonarsource.sonarqube</groupId>
-			<artifactId>sonar-plugin-api</artifactId>
-			<version>${sonar.plugin.api.version}</version>
-			<scope>provided</scope>
-		</dependency>
 		<dependency>
 			<groupId>org.sonarsource.java</groupId>
 			<artifactId>sonar-java-plugin</artifactId>
-			<version>${java.plugin.version}</version>
+			<version>${sonar-java-plugin.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.12</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.sonarsource.java</groupId>
-			<artifactId>java-checks-testkit</artifactId>
-			<version>${java.plugin.version}</version>
-			<scope>test</scope>
+			<groupId>org.sonarsource.sonarqube</groupId>
+			<artifactId>sonar-plugin-api</artifactId>
+			<version>${sonar-plugin-api.version}</version>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
 			<artifactId>logback-classic</artifactId>
-			<version>1.2.1</version>
+			<version>${logback.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.assertj</groupId>
 			<artifactId>assertj-core</artifactId>
-			<version>3.6.2</version>
+			<version>${assertj.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.sonarsource.java</groupId>
+			<artifactId>java-checks-testkit</artifactId>
+			<version>${sonar-java-plugin.version}</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-
 	<build>
 		<plugins>
 			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven-compiler-plugin.version}</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.sonatype.plugins</groupId>
+				<artifactId>nexus-staging-maven-plugin</artifactId>
+				<version>${nexus-staging-maven-plugin.version}</version>
+				<extensions>true</extensions>
+				<configuration>
+					<serverId>ossrh</serverId>
+					<nexusUrl>https://oss.sonatype.org/</nexusUrl>
+					<autoReleaseAfterClose>false</autoReleaseAfterClose>
+				</configuration>
+			</plugin>
+			<plugin>
 				<groupId>org.sonarsource.sonar-packaging-maven-plugin</groupId>
 				<artifactId>sonar-packaging-maven-plugin</artifactId>
-				<version>1.17</version>
+				<version>${sonar-packaging-maven-plugin.version}</version>
 				<extensions>true</extensions>
 				<configuration>
 					<pluginKey>${project.artifactId}</pluginKey>
@@ -69,14 +95,108 @@
 				</configuration>
 			</plugin>
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.6.0</version>
+				<groupId>com.github.ekryd.sortpom</groupId>
+				<artifactId>sortpom-maven-plugin</artifactId>
+				<version>${sortpom-maven-plugin.version}</version>
 				<configuration>
-					<source>1.8</source>
-					<target>1.8</target>
+					<nrOfIndentSpace>-1</nrOfIndentSpace>
+					<predefinedSortOrder>custom_1</predefinedSortOrder>
+					<sortDependencies>scope,groupId,artifactId</sortDependencies>
+					<sortPlugins>artifactId,groupId</sortPlugins>
+					<sortProperties>true</sortProperties>
+					<lineSeparator>\n</lineSeparator>
+					<verifyFail>Stop</verifyFail>
+					<createBackupFile>false</createBackupFile>
+					<expandEmptyElements>false</expandEmptyElements>
 				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>sort</goal>
+						</goals>
+						<phase>verify</phase>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
+	<url>https://github.com/rigoford/sonar-java-rules</url>
+	<licenses>
+		<license>
+			<name>MIT License</name>
+			<url>http://www.opensource.org/licenses/mit-license.php</url>
+		</license>
+	</licenses>
+	<developers>
+		<developer>
+			<name>Martin Ford</name>
+			<email>ford.j.martin@gmail.com</email>
+			<organizationUrl>https://github.com/rigoford</organizationUrl>
+		</developer>
+	</developers>
+	<scm>
+		<connection>scm:git:git://github.com/rigoford/sonar-java-rules.git</connection>
+		<developerConnection>scm:git:ssh://github.com:rigoford/sonar-java-rules.git</developerConnection>
+		<url>http://github.com/rigoford/sonar-java-rules</url>
+		<tag>HEAD</tag>
+	</scm>
+	<distributionManagement>
+		<repository>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+		</repository>
+		<snapshotRepository>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+		</snapshotRepository>
+	</distributionManagement>
+	<profiles>
+		<profile>
+			<id>release</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-gpg-plugin</artifactId>
+						<version>${maven-gpg-plugin.version}</version>
+						<executions>
+							<execution>
+								<id>sign-artifacts</id>
+								<goals>
+									<goal>sign</goal>
+								</goals>
+								<phase>verify</phase>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-javadoc-plugin</artifactId>
+						<version>${maven-javadoc-plugin.version}</version>
+						<executions>
+							<execution>
+								<id>attach-javadocs</id>
+								<goals>
+									<goal>jar</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-source-plugin</artifactId>
+						<version>${maven-source-plugin.version}</version>
+						<executions>
+							<execution>
+								<id>attach-sources</id>
+								<goals>
+									<goal>jar-no-fork</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
 </project>
