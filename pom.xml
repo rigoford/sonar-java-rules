@@ -8,43 +8,53 @@
 	<name>${project.groupId}:${project.artifactId}</name>
 	<description>Customised Java Rules</description>
 	<properties>
-		<java.plugin.version>4.5.0.8398</java.plugin.version>
-		<sonar.plugin.api.version>6.2.1</sonar.plugin.api.version>
+		<assertj.version>3.6.2</assertj.version>
+		<junit.version>4.12</junit.version>
+		<logback.version>1.2.1</logback.version>
+		<maven-compiler-plugin.version>3.6.1</maven-compiler-plugin.version>
+		<maven-gpg-plugin.version>1.5</maven-gpg-plugin.version>
+		<maven-javadoc-plugin.version>2.9.1</maven-javadoc-plugin.version>
+		<maven-source-plugin.version>2.2.1</maven-source-plugin.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<sonar-java-plugin.version>4.6.0.8784</sonar-java-plugin.version>
+		<sonar-packaging-maven-plugin.version>1.18.0.372</sonar-packaging-maven-plugin.version>
+		<sonar-plugin-api.version>6.2.1</sonar-plugin-api.version>
+		<sortpom-maven-plugin.version>2.5.0</sortpom-maven-plugin.version>
 	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.sonarsource.java</groupId>
 			<artifactId>sonar-java-plugin</artifactId>
-			<version>${java.plugin.version}</version>
+			<version>${sonar-java-plugin.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.sonarsource.sonarqube</groupId>
 			<artifactId>sonar-plugin-api</artifactId>
-			<version>${sonar.plugin.api.version}</version>
+			<version>${sonar-plugin-api.version}</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
 			<artifactId>logback-classic</artifactId>
-			<version>1.2.1</version>
+			<version>${logback.version}</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.12</version>
+			<version>${junit.version}</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.assertj</groupId>
 			<artifactId>assertj-core</artifactId>
-			<version>3.6.2</version>
+			<version>${assertj.version}</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.sonarsource.java</groupId>
 			<artifactId>java-checks-testkit</artifactId>
-			<version>${java.plugin.version}</version>
+			<version>${sonar-java-plugin.version}</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
@@ -53,7 +63,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.6.0</version>
+				<version>${maven-compiler-plugin.version}</version>
 				<configuration>
 					<source>1.8</source>
 					<target>1.8</target>
@@ -62,7 +72,7 @@
 			<plugin>
 				<groupId>org.sonarsource.sonar-packaging-maven-plugin</groupId>
 				<artifactId>sonar-packaging-maven-plugin</artifactId>
-				<version>1.17</version>
+				<version>${sonar-packaging-maven-plugin.version}</version>
 				<extensions>true</extensions>
 				<configuration>
 					<pluginKey>${project.artifactId}</pluginKey>
@@ -75,7 +85,7 @@
 			<plugin>
 				<groupId>com.github.ekryd.sortpom</groupId>
 				<artifactId>sortpom-maven-plugin</artifactId>
-				<version>2.5.0</version>
+				<version>${sortpom-maven-plugin.version}</version>
 				<configuration>
 					<nrOfIndentSpace>-1</nrOfIndentSpace>
 					<predefinedSortOrder>custom_1</predefinedSortOrder>
@@ -125,7 +135,7 @@
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-gpg-plugin</artifactId>
-						<version>1.5</version>
+						<version>${maven-gpg-plugin.version}</version>
 						<executions>
 							<execution>
 								<id>sign-artifacts</id>
@@ -139,7 +149,7 @@
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-javadoc-plugin</artifactId>
-						<version>2.9.1</version>
+						<version>${maven-javadoc-plugin.version}</version>
 						<executions>
 							<execution>
 								<id>attach-javadocs</id>
@@ -152,7 +162,7 @@
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-source-plugin</artifactId>
-						<version>2.2.1</version>
+						<version>${maven-source-plugin.version}</version>
 						<executions>
 							<execution>
 								<id>attach-sources</id>
