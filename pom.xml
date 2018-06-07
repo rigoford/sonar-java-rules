@@ -9,6 +9,7 @@
 	<description>Customised Java Rules</description>
 	<properties>
 		<assertj.version>3.6.2</assertj.version>
+		<codehaus-plexus-utils.version>3.0.16</codehaus-plexus-utils.version>
 		<junit.version>4.12</junit.version>
 		<logback.version>1.2.1</logback.version>
 		<maven-compiler-plugin.version>3.6.1</maven-compiler-plugin.version>
@@ -23,6 +24,11 @@
 		<sortpom-maven-plugin.version>2.5.0</sortpom-maven-plugin.version>
 	</properties>
 	<dependencies>
+		<dependency>
+			<groupId>org.codehaus.plexus</groupId>
+			<artifactId>plexus-utils</artifactId>
+			<version>${codehaus-plexus-utils.version}</version>
+		</dependency>
 		<dependency>
 			<groupId>org.sonarsource.java</groupId>
 			<artifactId>sonar-java-plugin</artifactId>
