@@ -10,7 +10,7 @@
 	<properties>
 		<assertj.version>3.6.2</assertj.version>
 		<codehaus-plexus-utils.version>3.0.16</codehaus-plexus-utils.version>
-		<junit.version>4.12</junit.version>
+		<junit.version>4.13.1</junit.version>
 		<logback.version>1.2.1</logback.version>
 		<maven-compiler-plugin.version>3.6.1</maven-compiler-plugin.version>
 		<maven-gpg-plugin.version>1.5</maven-gpg-plugin.version>
