@@ -18,7 +18,7 @@
 		<maven-source-plugin.version>2.2.1</maven-source-plugin.version>
 		<nexus-staging-maven-plugin.version>1.6.7</nexus-staging-maven-plugin.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<sonar-java-plugin.version>4.6.0.8784</sonar-java-plugin.version>
+		<sonar-java-plugin.version>6.11.0.24617</sonar-java-plugin.version>
 		<sonar-packaging-maven-plugin.version>1.18.0.372</sonar-packaging-maven-plugin.version>
 		<sonar-plugin-api.version>6.2.1</sonar-plugin-api.version>
 		<sortpom-maven-plugin.version>2.5.0</sortpom-maven-plugin.version>
